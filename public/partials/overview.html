@@ -1,0 +1,83 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="form-group col-md-4 pull-right">
+      <input type="text" class="form-control" ng-model="query" placeholder="search">
+    </div>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th ng-click="sort('i')">
+          ip
+        </th>
+        <th ng-click="sort('starts')">
+          starts
+        </th>
+        <th ng-click="sort('ends')">
+          ends
+        </th>
+        <th ng-click="sort('tstp')">
+          tstp
+        </th>
+        <th ng-click="sort('cltt')">
+          cltt
+        </th>
+        <th ng-click="sort('bindingState')" data-toggle="tooltip" data-placement="top" title="binding state">
+          bs
+        </th>
+        <th ng-click="sort('nextBindingState')" data-toggle="tooltip" data-placement="top" title="next binding state">
+          nbs
+        </th>
+        <th ng-click="sort('rewindBindingState')" data-toggle="tooltip" data-placement="top" title="rewind binding state">
+          rbs
+        </th>
+        <th ng-click="sort('hardwareEthernet')">
+          hardware ethernet
+        </th>
+        <th ng-click="sort('uid')">
+          uid
+        </th>
+        <th ng-click="sort('clientHostname')">
+          client hostname
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="lease in leases | filter: query | orderBy:predicate:reverse">
+        <td>
+          {{lease.ip}}
+        </td>
+        <td>
+          {{lease.starts}}
+        </td>
+        <td>
+          {{lease.ends}}
+        </td>
+        <td>
+          {{lease.tstp}}
+        </td>
+        <td>
+          {{lease.cltt}}
+        </td>
+        <td>
+          {{lease.bindingState}}
+        </td>
+        <td>
+          {{lease.nextBindingState}}
+        </td>
+        <td>
+          {{lease.rewindBindingState}}
+        </td>
+        <td>
+          {{lease.hardwareEthernet}}
+        </td>
+        <td>
+          {{lease.uid}}
+        </td>
+        <td>
+          {{lease.clientHostname}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
