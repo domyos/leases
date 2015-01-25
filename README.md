@@ -1,5 +1,8 @@
 # Leases
 
+A webinterface that displays  `isc-dhcp-servers` lease file in a searchable list.  
+
+## Installation
 To prepare the server run:
 
 ```
