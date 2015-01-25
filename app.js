@@ -2,11 +2,25 @@ var express = require('express');
 var path = require('path');
 var leasesParser = require('./modules/leasesParser');
 
-var leaseFilePath = process.argv[2];
-var inactive = process.argv[3] === '-i' || process.argv[3] === '--inactive';
+var leaseFilePath = '';
+var inactive = false;
+
+process.argv.forEach(function(param, index, array) {
+  var inactiveRegEx = /(-i|--inactive)/;
+  var leaseFileRegEx = /(-il|-l|--leaseFile)/;
+
+  if (leaseFileRegEx.test(param)) {
+    leaseFilePath = array[index + 1];
+  }
+
+  if (inactiveRegEx.test(param)) {
+    inactive = true;
+  }
+});
+
 
 if (!leaseFilePath) {
-  console.error('Use: node app.js [path to lease file]');
+  console.error('Must define lease file');
   return;
 }
 
