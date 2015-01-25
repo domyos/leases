@@ -4,10 +4,13 @@ var leasesParser = require('./modules/leasesParser');
 
 var leaseFilePath = '';
 var inactive = false;
+var hostname = '';
+var port = '';
 
 process.argv.forEach(function(param, index, array) {
   var inactiveRegEx = /(-i|--inactive)/;
   var leaseFileRegEx = /(-il|-l|--leaseFile)/;
+  var hostNameRegEx = /(-h|--hostname)/;
 
   if (leaseFileRegEx.test(param)) {
     leaseFilePath = array[index + 1];
@@ -15,6 +18,12 @@ process.argv.forEach(function(param, index, array) {
 
   if (inactiveRegEx.test(param)) {
     inactive = true;
+  }
+
+  if (hostNameRegEx.test(param)) {
+    var splitted = array[index + 1].split(':');
+    hostname = splitted[0] || 'localhost';
+    port = splitted[1] || 8080;
   }
 });
 
@@ -41,7 +50,7 @@ app.get('/api/leases', function(req, res) {
   });
 });
 
-var server = app.listen(8080, function() {
+var server = app.listen(port, hostname, function() {
   var host = server.address().address;
   var port = server.address().port;
 
