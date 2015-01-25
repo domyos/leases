@@ -2,7 +2,7 @@
 <html ng-app="dhcpApp">
   <head>
   </head>
-  <body>
+  <body ng-controller="OverviewCtrl">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -19,6 +19,11 @@
             <span class="icon-bar"></span>
           </button>
           <a class="navbar-brand" href="#">Leases</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a>Active: {{activeLeases()}}</a></li>
+          </ul>
         </div>
       </div>
     </nav>
