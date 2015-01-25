@@ -18,3 +18,10 @@ To revert your repo to the initial state after cloning use
 ```
 grunt clean
 ```
+
+Run the software with
+```
+node app.js [path to lease file]
+```
+
+To show all leases (not just the active ones) use -i or --inactive
