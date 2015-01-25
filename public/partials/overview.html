@@ -4,74 +4,76 @@
       <input type="text" class="form-control" ng-model="query" placeholder="search">
     </div>
   </div>
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th ng-click="sort('hardwareEthernet')">
-          hardware ethernet
-        </th>
-        <th ng-click="sort('ip')">
-          ip
-        </th>
-        <th ng-click="sort('clientHostname')">
-          client hostname
-        </th>
-        <th ng-click="sort('starts')">
-          starts
-        </th>
-        <th ng-click="sort('ends')">
-          ends
-        </th>
-        <th ng-click="sort('tstp')">
-          tstp
-        </th>
-        <th ng-click="sort('cltt')">
-          cltt
-        </th>
-        <th ng-click="sort('bindingState')" data-toggle="tooltip" data-placement="top" title="binding state">
-          bs
-        </th>
-        <th ng-click="sort('nextBindingState')" data-toggle="tooltip" data-placement="top" title="next binding state">
-          nbs
-        </th>
-        <th ng-click="sort('rewindBindingState')" data-toggle="tooltip" data-placement="top" title="rewind binding state">
-          rbs
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="lease in leases | filter: query | orderBy:predicate:reverse">
-        <td>
-          {{lease.hardwareEthernet}}
-        </td>
-        <td>
-          {{lease.ip}}
-        </td>
-        <td>
-          {{lease.clientHostname}}
-        </td>
-        <td>
-          {{lease.starts}}
-        </td>
-        <td>
-          {{lease.ends}}
-        </td>
-        <td>
-          {{lease.tstp}}
-        </td>
-        <td>
-          {{lease.cltt}}
-        </td>
-        <td>
-          {{lease.bindingState}}
-        </td>
-        <td>
-          {{lease.nextBindingState}}
-        </td>
-        <td>
-          {{lease.rewindBindingState}}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th ng-click="sort('hardwareEthernet')">
+            hardware ethernet
+          </th>
+          <th ng-click="sort('ip')">
+            IP
+          </th>
+          <th ng-click="sort('clientHostname')">
+            client hostname
+          </th>
+          <th ng-click="sort('starts')">
+            starts
+          </th>
+          <th ng-click="sort('ends')">
+            ends
+          </th>
+          <th ng-click="sort('tstp')" data-toggle="tooltip" data-placement="top" title="time send to peer">
+            tstp
+          </th>
+          <th ng-click="sort('cltt')" data-toggle="tooltip" data-placement="top" title="client last transaction time">
+            cltt
+          </th>
+          <th ng-click="sort('bindingState')" data-toggle="tooltip" data-placement="top" title="binding state">
+            bs
+          </th>
+          <th ng-click="sort('nextBindingState')" data-toggle="tooltip" data-placement="top" title="next binding state">
+            nbs
+          </th>
+          <th ng-click="sort('rewindBindingState')" data-toggle="tooltip" data-placement="top" title="rewind binding state">
+            rbs
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="lease in leases | filter: query | orderBy:predicate:reverse">
+          <td>
+            {{lease.hardwareEthernet}}
+          </td>
+          <td>
+            {{lease.ip}}
+          </td>
+          <td>
+            {{lease.clientHostname}}
+          </td>
+          <td>
+            {{lease.starts}}
+          </td>
+          <td>
+            {{lease.ends}}
+          </td>
+          <td>
+            {{lease.tstp}}
+          </td>
+          <td>
+            {{lease.cltt}}
+          </td>
+          <td>
+            {{lease.bindingState}}
+          </td>
+          <td>
+            {{lease.nextBindingState}}
+          </td>
+          <td>
+            {{lease.rewindBindingState}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
