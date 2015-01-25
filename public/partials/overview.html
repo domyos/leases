@@ -7,8 +7,14 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th ng-click="sort('i')">
+        <th ng-click="sort('hardwareEthernet')">
+          hardware ethernet
+        </th>
+        <th ng-click="sort('ip')">
           ip
+        </th>
+        <th ng-click="sort('clientHostname')">
+          client hostname
         </th>
         <th ng-click="sort('starts')">
           starts
@@ -31,18 +37,18 @@
         <th ng-click="sort('rewindBindingState')" data-toggle="tooltip" data-placement="top" title="rewind binding state">
           rbs
         </th>
-        <th ng-click="sort('hardwareEthernet')">
-          hardware ethernet
-        </th>
-        <th ng-click="sort('clientHostname')">
-          client hostname
-        </th>
       </tr>
     </thead>
     <tbody>
       <tr ng-repeat="lease in leases | filter: query | orderBy:predicate:reverse">
         <td>
+          {{lease.hardwareEthernet}}
+        </td>
+        <td>
           {{lease.ip}}
+        </td>
+        <td>
+          {{lease.clientHostname}}
         </td>
         <td>
           {{lease.starts}}
@@ -64,12 +70,6 @@
         </td>
         <td>
           {{lease.rewindBindingState}}
-        </td>
-        <td>
-          {{lease.hardwareEthernet}}
-        </td>
-        <td>
-          {{lease.clientHostname}}
         </td>
       </tr>
     </tbody>
