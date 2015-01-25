@@ -1,0 +1,22 @@
+{
+  "name": "leases",
+  "version": "1.0.0",
+  "authors": [
+    "\"\""
+  ],
+  "license": "GPLv3",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.2",
+    "angular": "~1.3.10",
+    "angular-route": "~1.3.10",
+    "angular-resource": "~1.3.10"
+  }
+}
