@@ -26,10 +26,10 @@ var parseLease = function(leaseString) {
   var lease = {};
 
   lease.ip = parseIp(leaseString);
-  lease.starts = parseStarts(leaseString);
-  lease.ends = parseEnds(leaseString);
-  lease.tstp = parseTstp(leaseString);
-  lease.cltt = parseCltt(leaseString);
+  lease.starts = getLocaleDateString(parseStarts(leaseString));
+  lease.ends = getLocaleDateString(parseEnds(leaseString));
+  lease.tstp = getLocaleDateString(parseTstp(leaseString));
+  lease.cltt = getLocaleDateString(parseCltt(leaseString));
   lease.bindingState = parseBindingState(leaseString);
   lease.nextBindingState = parseNextBindingState(leaseString);
   lease.rewindBindingState = parseRewindBindingState(leaseString);
@@ -104,6 +104,14 @@ var parseClientHostname = function(leaseString) {
   var clientHostnameRegEx = /client-hostname "(.+)";/;
   var result = leaseString.match(clientHostnameRegEx);
   return result ? result[1] : undefined;
+};
+
+var getLocaleDateString = function(dateString) {
+  var dateRegEx = /(.+)(GMT\+[0-9]{4}) (\(CES?T\))/;
+  if (dateString) {
+    var localeString = new Date(dateString.substr(2)).toLocaleString();
+    return localeString.replace(dateRegEx, '$1 $3');
+  }
 };
 
 module.exports = {
