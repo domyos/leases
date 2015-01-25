@@ -25,3 +25,4 @@ node app.js [path to lease file]
 ```
 
 To show all leases (not just the active ones) use -i or --inactive
+To set the hostname and port use -h or --hostname hostname:port
