@@ -1,0 +1,31 @@
+# Created by https://www.gitignore.io
+
+### Node ###
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
+.grunt
+
+# node-waf configuration
+.lock-wscript
+
+# Dependency directory
+node_modules
+bower_components
+
+# Debug log from npm
+npm-debug.log
+
+# copied files from external libraries
+*.min.js
+*.min.css
+
+# bootstrap fonts
+public/fonts
