@@ -1,5 +1,8 @@
 # Leases
 
+A webinterface that displays  `isc-dhcp-servers` lease file in a searchable list.  
+
+## Installation
 To prepare the server run:
 
 ```
@@ -21,8 +24,8 @@ grunt clean
 
 Run the software with
 ```
-node app.js [path to lease file]
+node app.js
 ```
-
+You must define your leases file with -l or --leaseFile [filepath]
 To show all leases (not just the active ones) use -i or --inactive
 To set the hostname and port use -h or --hostname hostname:port
