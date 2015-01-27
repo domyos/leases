@@ -4,8 +4,8 @@ var leasesParser = require('./modules/leasesParser');
 
 var leaseFilePath = '';
 var inactive = false;
-var hostname = '';
-var port = '';
+var hostname = 'localhost';
+var port = '8080';
 
 process.argv.forEach(function(param, index, array) {
   var inactiveRegEx = /(-i|--inactive)/;
