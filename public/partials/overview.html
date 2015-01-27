@@ -8,34 +8,54 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th ng-click="sort('hardwareEthernet')">
+          <th ng-click="sort('hardwareEthernet')"
+            ng-class="{ active: selected('hardwareEthernet'),
+            warning: selected('hardwareEthernet') && reverse }">
             hardware ethernet
           </th>
-          <th ng-click="sort('ip')">
+          <th ng-click="sort('ip')"
+            ng-class="{ active: selected('ip'),
+            warning: selected('ip') && reverse }">
             IP
           </th>
-          <th ng-click="sort('clientHostname')">
+          <th ng-click="sort('clientHostname')"
+            ng-class="{ active: selected('clientHostname'),
+            warning: selected('clientHostname') && reverse }">
             client hostname
           </th>
-          <th ng-click="sort('starts')">
+          <th ng-click="sort('starts')"
+            ng-class="{ active: selected('starts'),
+            warning: selected('starts') && reverse }">
             starts
           </th>
-          <th ng-click="sort('ends')">
+          <th ng-click="sort('ends')"
+            ng-class="{ active: selected('ends'),
+            warning: selected('ends') && reverse }">
             ends
           </th>
-          <th ng-click="sort('tstp')" data-toggle="tooltip" data-placement="top" title="time send to peer">
+          <th ng-click="sort('tstp')" data-toggle="tooltip" data-placement="top"
+            title="time send to peer" ng-class="{ active: selected('tstp'),
+            warning: selected('tstp') && reverse }">
             tstp
           </th>
-          <th ng-click="sort('cltt')" data-toggle="tooltip" data-placement="top" title="client last transaction time">
+          <th ng-click="sort('cltt')" data-toggle="tooltip" data-placement="top"
+            title="client last transaction time" ng-class="{ active: selected('cltt'),
+            warning: selected('cltt') && reverse }">
             cltt
           </th>
-          <th ng-click="sort('bindingState')" data-toggle="tooltip" data-placement="top" title="binding state">
+          <th ng-click="sort('bindingState')" data-toggle="tooltip" data-placement="top"
+            title="binding state" ng-class="{ active: selected('bindingState'),
+            warning: selected('bindingState') && reverse }">
             bs
           </th>
-          <th ng-click="sort('nextBindingState')" data-toggle="tooltip" data-placement="top" title="next binding state">
+          <th ng-click="sort('nextBindingState')" data-toggle="tooltip" data-placement="top"
+            title="next binding state" ng-class="{ active: selected('nextBindingState'),
+            warning: selected('nextBindingState') && reverse}">
             nbs
           </th>
-          <th ng-click="sort('rewindBindingState')" data-toggle="tooltip" data-placement="top" title="rewind binding state">
+          <th ng-click="sort('rewindBindingState')" data-toggle="tooltip" data-placement="top"
+            title="rewind binding state" ng-class="{ active: selected('rewindBindingState'),
+            warning: selected('rewindBindingState') && reverse }">
             rbs
           </th>
         </tr>
